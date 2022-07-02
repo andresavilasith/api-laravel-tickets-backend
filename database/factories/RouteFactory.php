@@ -20,7 +20,8 @@ class RouteFactory extends Factory
         return [
             'origin_city_id' => City::factory(),
             'destiny_city_id' => City::factory(),
-            'hours' => $this->faker->numberBetween(1, 50)
+            'hours' => $this->faker->numberBetween(1, 50),
+            'scales' => $this->faker->numberBetween(1,10),
         ];
     }
 }

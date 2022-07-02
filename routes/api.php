@@ -20,4 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::resource('city', CityController::class,['except'=>['create','store','edit','update','destroy']])->names('city');
 Route::resource('airline', AirlineController::class,['except'=>['create','store','edit','update','destroy']])->names('airline');
 Route::resource('route', RouteController::class,['except'=>['create','store','edit','update','destroy']])->names('route');
+
+Route::get('ticket/search', [TicketController::class, 'searchTickets']);
+
 Route::resource('ticket', TicketController::class,['except'=>['create','store','edit','update','destroy']])->names('ticket');

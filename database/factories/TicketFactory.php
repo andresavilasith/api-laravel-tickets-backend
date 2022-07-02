@@ -23,7 +23,6 @@ class TicketFactory extends Factory
             'airline_id' => Airline::factory(),
             'code' => $this->faker->unique()->slug,
             'price' => $this->faker->randomFloat(2, 100, 10000),
-            'scales' => $this->faker->numberBetween(1,10),
         ];
     }
 }

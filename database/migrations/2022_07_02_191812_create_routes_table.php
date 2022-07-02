@@ -20,6 +20,7 @@ return new class extends Migration
             $table->unsignedBigInteger('destiny_city_id');
             $table->foreign('destiny_city_id')->references('id')->on('cities')->onDelete('cascade');
             $table->string('hours');
+            $table->integer('scales');
             $table->timestamps();
         });
     }

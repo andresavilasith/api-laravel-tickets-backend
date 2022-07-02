@@ -35,4 +35,9 @@ class TicketController extends Controller
             'status' => 'success'
         ]);
     }
+
+    public function searchTickets()
+    {
+        
+    }
 }
