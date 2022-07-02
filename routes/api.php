@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\AirlineController;
+use App\Http\Controllers\CityController;
+use App\Http\Controllers\RouteController;
+use App\Http\Controllers\TicketController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -13,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::resource('city', CityController::class,['except'=>['create','store','edit','update','destroy']])->names('city');
+Route::resource('airline', AirlineController::class,['except'=>['create','store','edit','update','destroy']])->names('airline');
+Route::resource('route', RouteController::class,['except'=>['create','store','edit','update','destroy']])->names('route');
+Route::resource('ticket', TicketController::class,['except'=>['create','store','edit','update','destroy']])->names('ticket');
