@@ -21,6 +21,7 @@ return new class extends Migration
             $table->foreign('airline_id')->references('id')->on('airlines')->onDelete('cascade');
             $table->string('code')->unique();
             $table->float('price');
+            $table->integer('scales');
             $table->timestamps();
         });
     }
