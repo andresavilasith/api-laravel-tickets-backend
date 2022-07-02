@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Route;
 use App\Models\Ticket;
 use Illuminate\Http\Request;
 
@@ -38,6 +39,11 @@ class TicketController extends Controller
 
     public function searchTickets()
     {
-        
+        $routeWithTickets = Route::with('tickets')->get();
+
+        return response()->json([
+            'routeWithTickets' => $routeWithTickets,
+            'status' => 'success'
+        ]);
     }
 }

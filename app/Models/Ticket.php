@@ -20,4 +20,5 @@ class Ticket extends Model
     {
         return $this->belongsTo(Airline::class, 'airline_id');
     }
+    
 }

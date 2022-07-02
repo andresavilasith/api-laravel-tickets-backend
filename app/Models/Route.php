@@ -13,11 +13,16 @@ class Route extends Model
 
     public function origin_city()
     {
-        return $this->belongsTo(Category::class, 'origin_city_id');
+        return $this->belongsTo(City::class, 'origin_city_id');
     }
 
     public function destiny_city()
     {
-        return $this->belongsTo(Category::class, 'destiny_city_id');
+        return $this->belongsTo(City::class, 'destiny_city_id');
+    }
+
+    public function tickets()
+    {
+        return $this->hasMany(Ticket::class);
     }
 }
