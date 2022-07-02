@@ -39,7 +39,7 @@ class TicketController extends Controller
 
     public function searchTickets()
     {
-        $routeWithTickets = Route::with('tickets')->get();
+        $routeWithTickets = Ticket::with('route','airline')->get();
 
         return response()->json([
             'routeWithTickets' => $routeWithTickets,
